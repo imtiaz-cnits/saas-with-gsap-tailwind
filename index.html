@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light SaaS</title>
+    <link rel="stylesheet" href="./src/input.css">
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body>
+
+    <!-- Navbar Section Start -->
+    <section class="relative section_nav">
+        <nav class="fixed w-full z-50 navbar">
+            <div class="custom_container nav_container">
+                <div class="flex justify-between items-center nav_flex">
+                    <div class="nav_logo">
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">YourLogo</span>
+                        </a>
+                    </div>
+
+                    <div class="hidden md:flex items-center space-x-6 nav_links">
+                        <a href="#"
+                            class="nav_link py-4 px-2 text-green-500 border-green-500 font-semibold font-primary">
+                            Home
+                        </a>
+                        <a href="#"
+                            class="nav_link py-4 px-2 text-gray-500 font-semibold font-primary hover:text-green-500">Services</a>
+                        <a href="#"
+                            class="nav_link py-4 px-2 text-gray-500 font-semibold font-primary hover:text-green-500">About</a>
+                        <a href="#"
+                            class="nav_link py-4 px-2 text-gray-500 font-semibold font-primary hover:text-green-500">Contact</a>
+
+                        <a href="#"
+                            class="nav_link py-2 px-5 font-medium text-white bg-black border border-black rounded-xl font-primary transition duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg hover:scale-105">
+                            Get for free
+                        </a>
+                    </div>
+
+                    <div class="md:hidden flex items-center nav_mobile_btn">
+                        <button class="outline-none nav_mobile-button">
+                            <svg class="w-6 h-6 text-gray-500 hover:text-green-500 nav_button--hover" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar Start -->
+        <div class="nav_mobile-overlay fixed inset-0 z-40 bg-black nav_overlay"></div>
+        <div
+            class="nav_mobile_menu fixed inset-y-0 left-0 z-50 w-4/5 max-w-xs bg-white shadow-xl rounded-r-xl border-r border-gray-200 nav_menu">
+            <div class="p-4 flex justify-between items-center border-b border-gray-200 nav_menu_top">
+                <a href="#" class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    <span class="font-semibold text-gray-700 text-lg">Menu</span>
+                </a>
+                <button class="nav_close-button p-1 rounded-full hover:bg-gray-100 nav_button--hover">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <ul class="divide-y divide-gray-100 nav_menu_list">
+                <li>
+                    <a href="#"
+                        class="block px-5 py-4 text-gray-800 hover:bg-green-50 hover:text-green-600 font-medium text-base nav_link--mobile transition duration-300 ease-in-out">Home</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block px-5 py-4 text-gray-800 hover:bg-green-50 hover:text-green-600 nav_link--mobile transition duration-300 ease-in-out">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block px-5 py-4 text-gray-800 hover:bg-green-50 hover:text-green-600 nav_link--mobile transition duration-300 ease-in-out">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block px-5 py-4 text-gray-800 hover:bg-green-50 hover:text-green-600 nav_link--mobile transition duration-300 ease-in-out">
+                        Contact
+                    </a>
+                </li>
+                <li class="pt-4 px-5 nav_menu_auth">
+                    <div class="flex flex-col space-y-3 pb-6">
+                        <a href="#"
+                            class="w-full text-center py-2 px-4 font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-300 nav_link--mobile">
+                            Log In
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar End -->
+    </section>
+
+    <!-- Navbar Section End -->
+
+    <!-- Hero Section Start -->
+    <section class="hero_section">
+        <div class="w-full h-full pt-16 flex items-center hero_section_start">
+            <div class="custom_container w-full flex flex-col lg:flex-row items-center lg:items-start gap-12 py-12">
+                <!-- Left side: Text content -->
+                <div class="lg:w-1/2 hero_content">
+                    <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Welcome to</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Our Awesome Website
+                    </p>
+                    <p class="mt-4 max-w-xl text-xl text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magnam voluptatum cupiditate
+                        veritatis in, accusamus quisquam.
+                    </p>
+                    <div class="mt-8 flex justify-start hero_buttons">
+                        <div class="inline-flex rounded-md shadow">
+                            <a href="#"
+                                class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 nav_button--hover">
+                                Get started
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side Image -->
+                <div class="lg:w-1/2 h-96 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <!-- SVG এখানে বসবে -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-48 h-48 text-gray-400" fill="none"
+                        viewBox="0 0 64 64" stroke="currentColor" stroke-width="2">
+                        <rect x="8" y="8" width="48" height="48" rx="8" ry="8" />
+                        <path d="M16 32l10 10 22-22" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

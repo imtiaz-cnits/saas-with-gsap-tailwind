@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* ..................................................... */
+/* .............. Default CSS END ...................... */
+/* ..................................................... */
+
+/* Import Tailwind */
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-font:"DM Sans", sans-serif;
+    --black: #000;
+    --text: #000;
+    --hero-bg: radial-gradient(50.06% 50.06% at 50% 50.06%, #183EC2 0%, #EAEEFE 100%);
+  }
+
+  body {
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+  }
+
+  ol,
+  ul,
+  menu {
+    list-style: none;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: var(--primary-font);
+    color: var(--text2);
+  }
+
+  label {
+    color: var(--text) !important;
+    transition: 0.4s;
+  }
+}
+
+/* Font */
+@layer utilities {
+ .font-primary {
+    font-family: var(--primary-font) !important;
+  }
+}
+
+/* Container Setup */
+@layer components {
+  .custom_container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-[1536px] xl:max-w-[1280px] lg:max-w-[1024px] md:max-w-[768px] sm:max-w-[640px];
+  }
+}
+
+/* @layer components {
+  .custom_container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1420px;
+  }
+} */
+
+/* ..................................................... */
+/* .............. Default CSS END ...................... */
+/* ..................................................... */
+
+
+
+/* Navbar Start */
+.nav_mobile_menu {
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  border-right: 1px solid #e5e7eb;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.nav_mobile_menu--active {
+  transform: translateX(0);
+}
+
+.nav_mobile-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.nav_mobile-overlay--active {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+
+.nav_link {
+  transition: all 0.3s ease;
+}
+
+.nav_link--mobile {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.body--menu-open {
+  overflow: hidden;
+}
+
+.nav_button--hover {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar End */
+
+
+/* Hero Section Start */
+.hero_section {
+  background-image: var(--hero-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hero Section End */
