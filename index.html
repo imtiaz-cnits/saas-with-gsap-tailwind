@@ -7,42 +7,51 @@
     <title>Light SaaS</title>
     <link rel="stylesheet" href="./src/input.css">
     <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./assets/font/satoshi.css">
 </head>
 
 <body>
 
     <!-- Navbar Section Start -->
     <section class="relative section_nav">
-        <nav class="fixed w-full z-50 navbar">
-            <div class="custom_container nav_container">
+        <nav class="fixed w-full z-50 navbar" style="background-color: var(--bg-color);">
+            <div class="navbar_container nav_container">
                 <div class="flex justify-between items-center nav_flex">
                     <div class="nav_logo">
+                        <!-- <a href="#" class="flex items-center py-4 px-2">
+                            <img src="./assets/img/navbar-logo.png" alt="Logo"
+                                class="h-10 w-auto object-contain transition-opacity duration-300 hover:opacity-80" />
+                        </a> -->
                         <a href="#" class="flex items-center py-4 px-2">
-                            <span class="font-semibold text-gray-500 text-lg">YourLogo</span>
+                            <span class="font-semibold text-[var(--primary-color)] text-[28px]">Stitle.</span>
                         </a>
                     </div>
 
-                    <div class="hidden md:flex items-center space-x-6 nav_links">
-                        <a href="#"
-                            class="nav_link py-4 px-2 text-green-500 border-green-500 font-semibold font-primary">
-                            Home
+                    <div class="hidden md:flex items-center space-x-4 nav_links mx-auto">
+                        <a href="#" class="nav_link py-4 px-2 font-semibold font-primary text-[var(--primary-color)]">Templates
+                            <span class="underline block relative h-0.5 bg-[var(--primary-color)] origin-left scale-x-0"></span>
                         </a>
-                        <a href="#"
-                            class="nav_link py-4 px-2 text-gray-500 font-semibold font-primary hover:text-green-500">Services</a>
-                        <a href="#"
-                            class="nav_link py-4 px-2 text-gray-500 font-semibold font-primary hover:text-green-500">About</a>
-                        <a href="#"
-                            class="nav_link py-4 px-2 text-gray-500 font-semibold font-primary hover:text-green-500">Contact</a>
+                        <a href="#" class="nav_link py-4 px-2 font-semibold font-primary text-[var(--primary-color)]">Service
+                            <span class="underline block relative h-0.5 bg-[var(--primary-color)] origin-left scale-x-0"></span>
+                        </a>
+                        <a href="#" class="nav_link py-4 px-2 font-semibold font-primary text-[var(--primary-color)]">Pricing
+                            <span class="underline block relative h-0.5 bg-[var(--primary-color)] origin-left scale-x-0"></span>
+                        </a>
+                        <a href="#" class="nav_link py-4 px-2 font-semibold font-primary text-[var(--primary-color)]">Customers
+                            <span class="underline block relative h-0.5 bg-[var(--primary-color)] origin-left scale-x-0"></span>
+                        </a>
+                    </div>
 
+                    <div class="hidden md:flex nav_cta_btn">
                         <a href="#"
-                            class="nav_link py-2 px-5 font-medium text-white bg-black border border-black rounded-xl font-primary transition duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg hover:scale-105">
-                            Get for free
+                            class="py-2 px-5 font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out">Get
+                            for free
                         </a>
                     </div>
 
                     <div class="md:hidden flex items-center nav_mobile_btn">
                         <button class="outline-none nav_mobile-button">
-                            <svg class="w-6 h-6 text-gray-500 hover:text-green-500 nav_button--hover" fill="none"
+                            <svg class="w-6 h-6 text-[var(--primary-color)] nav_button--hover" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path d="M4 6h16M4 12h16M4 18h16"></path>
@@ -54,84 +63,95 @@
         </nav>
 
         <!-- Sidebar Start -->
-        <div class="nav_mobile-overlay fixed inset-0 z-40 bg-black nav_overlay"></div>
+        <div class="nav_mobile-overlay fixed inset-0 z-40 bg-black/60 nav_overlay"></div>
+
         <div
-            class="nav_mobile_menu fixed inset-y-0 left-0 z-50 w-4/5 max-w-xs bg-white shadow-xl rounded-r-xl border-r border-gray-200 nav_menu">
-            <div class="p-4 flex justify-between items-center border-b border-gray-200 nav_menu_top">
-                <a href="#" class="flex items-center space-x-2">
-                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                    </svg>
-                    <span class="font-semibold text-gray-700 text-lg">Menu</span>
+            class="nav_mobile_menu fixed inset-y-0 left-0 z-50 w-4/5 max-w-xs bg-[var(--bg-color)] shadow-2xl rounded-r-2xl border-r border-gray-700 nav_menu text-[var(--primary-color)] font-[var(--primary-font)]">
+
+            <!-- Top -->
+            <div class="p-4 flex justify-between items-center border-b border-gray-700 nav_menu_top">
+                <!-- <a href="#" class="flex items-center space-x-2 px-5 py-4 logo_sidebar">
+                    <img src="/path-to-logo.png" alt="Logo" class="h-[36px] w-auto object-contain logo_img" />
+                </a> -->
+                <a href="#" class="flex items-center space-x-2 px-4 py-4 logo_sidebar">
+                    <span class="font-semibold text-[var(--primary-color)] text-[20px] leading-none logo_text">
+                        Stitle.
+                    </span>
                 </a>
-                <button class="nav_close-button p-1 rounded-full hover:bg-gray-100 nav_button--hover">
-                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
+                <a href="#"
+                    class="nav_close-button p-1 rounded-full hover:bg-gray-800 nav_button--hover inline-flex items-center justify-center">
+                    <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                </button>
+                </a>
+
             </div>
 
-            <ul class="divide-y divide-gray-100 nav_menu_list">
+            <!-- Menu Items -->
+            <ul class="divide-y divide-gray-800 nav_menu_list">
                 <li>
                     <a href="#"
-                        class="block px-5 py-4 text-gray-800 hover:bg-green-50 hover:text-green-600 font-medium text-base nav_link--mobile transition duration-300 ease-in-out">Home</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block px-5 py-4 text-gray-800 hover:bg-green-50 hover:text-green-600 nav_link--mobile transition duration-300 ease-in-out">
-                        Services
+                        class="block px-5 py-4 font-medium text-base nav_link--mobile transition duration-300 ease-in-out">
+                        Templates
                     </a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block px-5 py-4 text-gray-800 hover:bg-green-50 hover:text-green-600 nav_link--mobile transition duration-300 ease-in-out">
-                        About
+                    <a href="#" class="block px-5 py-4 transition duration-300 ease-in-out">
+                        Service
                     </a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="block px-5 py-4 text-gray-800 hover:bg-green-50 hover:text-green-600 nav_link--mobile transition duration-300 ease-in-out">
-                        Contact
+                    <a href="#" class="block px-5 py-4 transition duration-300 ease-in-out">
+                        Pricing
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block px-5 py-4 transition duration-300 ease-in-out">
+                        Customers
                     </a>
                 </li>
                 <li class="pt-4 px-5 nav_menu_auth">
                     <div class="flex flex-col space-y-3 pb-6">
                         <a href="#"
-                            class="w-full text-center py-2 px-4 font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-300 nav_link--mobile">
+                            class="w-full text-center py-2 px-4 font-medium border border-gray-600 rounded-lg hover:bg-gray-800 transition duration-300">
                             Log In
                         </a>
                     </div>
                 </li>
             </ul>
         </div>
+
         <!-- Sidebar End -->
     </section>
-
     <!-- Navbar Section End -->
 
     <!-- Hero Section Start -->
-    <section class="hero_section">
+    <section class="hero_section" style="background-color: var(--bg-color);">
         <div class="w-full h-full pt-16 flex items-center hero_section_start">
-            <div class="custom_container w-full flex flex-col lg:flex-row items-center lg:items-start gap-12 py-12">
+            <div
+                class="section_container w-full flex flex-col lg:flex-row items-center lg:items-start gap-12 pt-[100px] pb-[30px] pl-[40px] pr-[20px]">
                 <!-- Left side: Text content -->
                 <div class="lg:w-1/2 hero_content">
-                    <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Welcome to</h2>
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                        Our Awesome Website
-                    </p>
-                    <p class="mt-4 max-w-xl text-xl text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magnam voluptatum cupiditate
-                        veritatis in, accusamus quisquam.
-                    </p>
-                    <div class="mt-8 flex justify-start hero_buttons">
-                        <div class="inline-flex rounded-md shadow">
-                            <a href="#"
-                                class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 nav_button--hover">
-                                Get started
-                            </a>
-                        </div>
+                    <h3 class="text-md opacity-70 text-[var(--primary-color)] font-medium tracking-widest pb-[10px]"
+                        style="font-family: var(--primary-font);">With Stitle</h3>
+                    <h2 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-[var(--primary-color)] sm:text-4xl pb-[10px]"
+                        style="font-family: var(--primary-font);">Let’s start a project together</h2>
+                    <p class="mt-4 max-w-xl text-[18px] opacity-70 text-[var(--primary-color)]">Lorem ipsum dolor sit
+                        amet,
+                        consectetur adipiscing
+                        elit. Mus sed massa.</p>
+                    <div class="mt-8 flex items-center max-w-sm w-full pr-[8px] pt-[6px] pb-[6px] pl-[8px] rounded-l-4xl rounded-r-4xl"
+                        style="background-color: var(--bg-color-1);">
+                        <input type="email" placeholder="Type your email address"
+                            class="flex-grow text-gray-300 placeholder-gray-500 rounded-l-4xl rounded-r-4xl pl-[10px] focus:outline-none focus:ring-none" />
+                        <a href="#"
+                            class="inline-flex items-center justify-center px-4 py-2 rounded-r-4xl rounded-l-4xl bg-green-500 hover:bg-green-600 text-white font-medium shadow nav_button--hover">
+                            Get Started
+                        </a>
                     </div>
+
+
                 </div>
 
                 <!-- Right side Image -->
@@ -150,7 +170,14 @@
 
 
 
+    <!-- js link start -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/script.js"></script>
+
+    <!-- js link End -->
 </body>
 
 </html>

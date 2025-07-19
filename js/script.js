@@ -20,14 +20,79 @@ menuBtn.addEventListener("click", openMenu);
 closeBtn.addEventListener("click", closeMenu);
 overlay.addEventListener("click", closeMenu);
 
-// Close menu when clicking on nav links
 document.querySelectorAll('.nav_mobile_menu a').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
 
-// Close menu when pressing Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('nav_mobile_menu--active')) {
         closeMenu();
     }
 });
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 767.2) {
+        closeMenu();
+    }
+});
+
+
+// navbar item animetion start
+
+const links = document.querySelectorAll('.nav_link');
+
+links.forEach(link => {
+    const underline = link.querySelector('.underline');
+
+    link.addEventListener('mouseenter', () => {
+        gsap.to(underline, { duration: 0.4, scaleX: 1, ease: "power2.inOut" });
+    });
+
+    link.addEventListener('mouseleave', () => {
+        gsap.to(underline, { duration: 0.4, scaleX: 0, ease: "power2.inOut" });
+    });
+});
+
+
+// navbar item animetion End
+
+
+// navbar animetion start
+
+window.addEventListener("load", () => {
+    gsap.from(".nav_logo", {
+        y: -30,
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+        ease: "power3.out"
+    });
+
+    gsap.from(".nav_links a", {
+        y: -30,
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0
+    });
+
+    gsap.to(".nav_links a", {
+        y: 0,
+        opacity: 1,
+        delay: 1,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0
+    })
+
+    gsap.from(".nav_cta_btn", {
+        y: -30,
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+        ease: "power3.out"
+    });
+});
+
+// navbar animetion End
