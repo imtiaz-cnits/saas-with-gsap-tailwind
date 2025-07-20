@@ -60,7 +60,7 @@ tl.to(".nav_mobile_menu", {
 // Logo animate
 .from(".logo_sidebar", {
   opacity: 0,
-  y: -20,
+  x: -20,
   duration: 0.5,
   ease: "power2.out"
 })
@@ -69,30 +69,25 @@ tl.to(".nav_mobile_menu", {
 .from(".nav_close-button", {
   opacity: 0,
   scale: 0.7,
-  duration: 0.5,
+  duration: 0.4,
   ease: "back.out(1.7)"
 }, "-=0.3")
 
-// Menu list items animate one by one slowly
 .from(".nav_menu_list li", {
   x: -40,
   opacity: 0,
-  duration: 0.5,
+  duration: 0.4,
   stagger: 0.2,
   ease: "power2.out"
 })
 
 // Log in button animation
 .from(".nav_menu_auth", {
-  y: 20,
-  opacity: 0,
   duration: 0.6,
   ease: "power2.out"
 }, "-=0.3")
 
 .to(".nav_menu_auth", {
-  y: 0,
-  opacity: 1,
   duration: 0.6,
   ease: "power2.out"
 }, "-=0.3")

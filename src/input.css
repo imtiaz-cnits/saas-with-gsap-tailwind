@@ -47,10 +47,11 @@
   :root {
     --primary-font: 'Satoshi';
     --primary-color: #FFF;
-    --bg-color: #000000;
+    --bg-color: #1B1F24;
     --bg-color-1: #222931;
     --text: #FFF;
     --color: #00C39A;
+    --black: #000000;
     --hero-bg: radial-gradient(50.06% 50.06% at 50% 50.06%, #183EC2 0%, #EAEEFE 100%);
   }
 
@@ -149,7 +150,6 @@
   transform: scaleX(0);
 }
 
-
 /* Navbar End */
 
 
@@ -162,3 +162,24 @@
 }
 
 /* Hero Section End */
+
+/* Better Trade Section Start */
+.doodle-squiggle {
+  transform: rotate(-25deg);
+  border: 3px solid black;
+  border-radius: 9999px;
+  width: 50px;
+  height: 50px;
+}
+
+.bg_blue_chain {
+  background-color: #0e8bd9;
+  background-image:
+    radial-gradient(#519fe2 1px, transparent 1px),
+    linear-gradient(135deg, #0e8bd9, #519fe2, #89b4ec, #24ade6, #0662c8, #66cdf5, #0949b4, #0c63b1, #316a94, #22a2f4);
+  background-size: 10px 10px, cover;
+  background-blend-mode: overlay;
+}
+
+
+/* Better Trade Section End */
