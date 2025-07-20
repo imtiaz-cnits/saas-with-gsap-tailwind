@@ -1,3 +1,4 @@
+/////////////////////// navbar sidebar start ///////////////////////////
 const menuBtn = document.querySelector(".nav_mobile-button");
 const mobileMenu = document.querySelector(".nav_mobile_menu");
 const overlay = document.querySelector(".nav_mobile-overlay");
@@ -35,7 +36,88 @@ window.addEventListener('resize', () => {
         closeMenu();
     }
 });
+/////////////////////////// navbar sidebar end /////////////////
 
+
+// navbar sidebar animetion start
+
+const tl = gsap.timeline({ paused: true });
+
+// Step-by-step Animation
+tl.to(".nav_mobile_menu", {
+  x: 0,
+  duration: 0.6,
+  ease: "power3.out"
+})
+
+// Show overlay opacity (optional)
+.to(".nav_overlay", {
+  opacity: 1,
+  duration: 0.3,
+  ease: "power1.out"
+}, "-=0.5")
+
+// Logo animate
+.from(".logo_sidebar", {
+  opacity: 0,
+  y: -20,
+  duration: 0.5,
+  ease: "power2.out"
+})
+
+// Close button animate
+.from(".nav_close-button", {
+  opacity: 0,
+  scale: 0.7,
+  duration: 0.5,
+  ease: "back.out(1.7)"
+}, "-=0.3")
+
+// Menu list items animate one by one slowly
+.from(".nav_menu_list li", {
+  x: -40,
+  opacity: 0,
+  duration: 0.5,
+  stagger: 0.2,
+  ease: "power2.out"
+})
+
+// Log in button animation
+.from(".nav_menu_auth", {
+  y: 20,
+  opacity: 0,
+  duration: 0.6,
+  ease: "power2.out"
+}, "-=0.3")
+
+.to(".nav_menu_auth", {
+  y: 0,
+  opacity: 1,
+  duration: 0.6,
+  ease: "power2.out"
+}, "-=0.3")
+
+// Initial position hidden
+gsap.set(".nav_mobile_menu", { x: "-100%" });
+gsap.set(".nav_overlay", { opacity: 0, display: "none" });
+
+// Show sidebar
+menuBtn.addEventListener("click", () => {
+  document.querySelector(".nav_overlay").style.display = "block";
+  tl.play();
+});
+
+// Hide sidebar
+function closeSidebar() {
+  tl.reverse();
+  setTimeout(() => {
+    document.querySelector(".nav_overlay").style.display = "none";
+  }, 1200); // Match total reverse time
+}
+
+closeBtn.addEventListener("click", closeSidebar);
+overlay.addEventListener("click", closeSidebar);
+// navbar sidebar animetion end
 
 // navbar item animetion start
 
@@ -64,7 +146,7 @@ window.addEventListener("load", () => {
         y: -30,
         opacity: 0,
         delay: 1,
-        duration: 1,
+        duration: 2,
         ease: "power3.out"
     });
 
@@ -72,7 +154,7 @@ window.addEventListener("load", () => {
         y: -30,
         opacity: 0,
         delay: 1,
-        duration: 1,
+        duration: 2,
         ease: "power3.out",
         stagger: 0
     });
@@ -81,7 +163,7 @@ window.addEventListener("load", () => {
         y: 0,
         opacity: 1,
         delay: 1,
-        duration: 1,
+        duration: 2,
         ease: "power3.out",
         stagger: 0
     })
@@ -90,9 +172,49 @@ window.addEventListener("load", () => {
         y: -30,
         opacity: 0,
         delay: 1,
-        duration: 1,
+        duration: 2,
+        ease: "power3.out"
+    });
+
+    gsap.from(".nav_mobile_btn", {
+        y: -30,
+        opacity: 0,
+        delay: 1,
+        duration: 2,
         ease: "power3.out"
     });
 });
 
 // navbar animetion End
+
+
+// hero svg animetion start
+
+
+const paths = document.querySelectorAll(".hero_svg path");
+
+paths.forEach((path, i) => {
+    const length = path.getTotalLength();
+    gsap.set(path, {
+        strokeDasharray: length,
+        strokeDashoffset: length,
+        opacity: 0,
+        scale: 0.95,
+        transformOrigin: "50% 50%",
+    });
+
+    gsap.to(path, {
+        strokeDashoffset: 0,
+        opacity: 1,
+        scale: 1.05,
+        duration: 1.5,
+        delay: i * 0.3,
+        ease: "power2.out",
+        yoyo: true,
+        repeat: -1,
+        repeatDelay: 0.5,
+    });
+});
+
+
+// hero svg animetion end

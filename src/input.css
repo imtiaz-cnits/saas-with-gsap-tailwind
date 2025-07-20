@@ -90,11 +90,11 @@
 /* Container Setup */
 @layer components {
   .navbar_container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8 sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px];
+    @apply mx-auto w-full px-0 sm:px-0 md:px-4 lg:px-6 xl:px-8 2xl:max-w-[1536px];
   }
 
   .section_container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8 sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1420px];
+    @apply mx-auto w-full px-0 sm:px-0 md:px-6 lg:px-8 xl:px-10 2xl:max-w-[1420px];
   }
 }
 
@@ -154,5 +154,11 @@
 
 
 /* Hero Section Start */
+
+@media screen and (max-width: 1030px) {
+  .right_side_item {
+    display: none !important;
+  }
+}
 
 /* Hero Section End */
