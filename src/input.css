@@ -49,6 +49,8 @@
     --primary-color: #FFF;
     --bg-color: #1B1F24;
     --bg-color-1: #222931;
+    --bg-color-2:#5E7960;
+    --bg-color-3:#201E1A;
     --text: #FFF;
     --color: #00C39A;
     --black: #000000;
@@ -172,14 +174,6 @@
   height: 50px;
 }
 
-.bg_blue_chain {
-  background-color: #0e8bd9;
-  background-image:
-    radial-gradient(#519fe2 1px, transparent 1px),
-    linear-gradient(135deg, #0e8bd9, #519fe2, #89b4ec, #24ade6, #0662c8, #66cdf5, #0949b4, #0c63b1, #316a94, #22a2f4);
-  background-size: 10px 10px, cover;
-  background-blend-mode: overlay;
-}
 
 
 /* Better Trade Section End */
