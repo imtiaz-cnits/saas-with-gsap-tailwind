@@ -49,8 +49,10 @@
     --primary-color: #FFF;
     --bg-color: #1B1F24;
     --bg-color-1: #222931;
-    --bg-color-2:#5E7960;
-    --bg-color-3:#201E1A;
+    --bg-color-2: #5E7960;
+    --bg-color-3: #201E1A;
+    --card-border: #262A2F;
+    --card-shadow: drop-shadow(110px 94px 140px rgba(0, 0, 0, 0.21));
     --text: #FFF;
     --color: #00C39A;
     --black: #000000;
@@ -71,7 +73,17 @@
     list-style: none;
   }
 
-  p {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--primary-font);
+  }
+
+  p,
+  a {
     font-size: 16px;
     font-family: var(--primary-font);
     color: var(--text2);
@@ -107,6 +119,11 @@
 
 
 /* Navbar Start */
+
+body {
+  background-color: var(--bg-color);
+}
+
 .nav_mobile_menu {
   transform: translateX(-100%);
   transition: transform 0.4s ease-in-out;
@@ -168,7 +185,7 @@
 /* Better Trade Section Start */
 .doodle-squiggle {
   transform: rotate(-25deg);
-  border: 3px solid black;
+  border: 3px solid var(--black);
   border-radius: 9999px;
   width: 50px;
   height: 50px;
