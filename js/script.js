@@ -1,3 +1,5 @@
+
+
 /////////////////////// navbar sidebar start ///////////////////////////
 const menuBtn = document.querySelector(".nav_mobile-button");
 const mobileMenu = document.querySelector(".nav_mobile_menu");
@@ -211,53 +213,105 @@ paths.forEach((path, i) => {
   });
 });
 
-
 // hero svg animetion end
 
 
 // Trusted Customers Logo Animetion Start
+
 function marqueeAnimation() {
   const container = document.querySelector(".trusted_customer_card_items");
-  const speed = 100;
-  let direction = -1;
-  let xPos = 0;
 
+  // Duplicate content
   container.innerHTML += container.innerHTML;
 
-  const totalWidth = container.scrollWidth / 2;
+  // Wait till DOM is fully rendered
+  requestAnimationFrame(() => {
+    const items = container.children;
+    const itemCount = items.length / 2;
 
-  let lastTime = performance.now();
-
-  function animate(time) {
-    const deltaTime = (time - lastTime) / 1000;
-    lastTime = time;
-
-    xPos += direction * speed * deltaTime;
-
-    if (direction === -1 && xPos <= -totalWidth) {
-      xPos = 0;
-    }
-    if (direction === 1 && xPos >= 0) {
-      xPos = -totalWidth;
+    let totalWidth = 0;
+    for (let i = 0; i < itemCount; i++) {
+      totalWidth += items[i].offsetWidth;
     }
 
-    gsap.set(container, { x: xPos });
+    let xPos = 0;
+    let direction = -1;
+    const speed = 100;
+
+    let lastTime = performance.now();
+
+    function animate(time) {
+      const delta = (time - lastTime) / 1000;
+      lastTime = time;
+
+      xPos += direction * speed * delta;
+
+      // Loop back seamlessly
+      if (direction === -1 && xPos <= -totalWidth) {
+        xPos = 0;
+      }
+      if (direction === 1 && xPos >= 0) {
+        xPos = -totalWidth;
+      }
+
+      gsap.set(container, { x: xPos });
+      requestAnimationFrame(animate);
+    }
+
+    // Scroll direction change on wheel
+    window.addEventListener("wheel", (e) => {
+      if (e.deltaY > 0) direction = -1;
+      else if (e.deltaY < 0) direction = 1;
+    });
 
     requestAnimationFrame(animate);
-  }
-
-  window.addEventListener("wheel", (e) => {
-    if (e.deltaY > 0) {
-      direction = -1;
-    } else if (e.deltaY < 0) {
-      direction = 1;
-    }
   });
-
-  requestAnimationFrame(animate);
 }
 
 marqueeAnimation();
 
-
 // Trusted Customers Logo Animetion End
+
+
+// App Design Section Animetion Start
+
+// App Design Section Animetion End
+
+
+// Web Design Section Animetion Start
+
+gsap.registerPlugin(ScrollTrigger);
+
+function imageZoomAndCenterWithTextHide() {
+  const imageDiv = document.querySelector(".web_design_image_section");
+  const textDiv = document.querySelector(".web_design_text_section");
+
+  if (!imageDiv || !textDiv) return;
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: imageDiv,
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+      markers: false,
+      onEnter: () => gsap.to(textDiv, {autoAlpha: 0, duration: 0.4}),
+      onLeaveBack: () => gsap.to(textDiv, {autoAlpha: 1, duration: 0.4}),
+      onLeave: () => gsap.to(textDiv, {autoAlpha: 1, duration: 0.4}),
+      onEnterBack: () => gsap.to(textDiv, {autoAlpha: 0, duration: 0.4}),
+    }
+  })
+  .to(imageDiv, {
+    scale: 2,
+    marginLeft: "auto",
+    marginRight: "auto",
+    overflow:"hedden",
+    width: "100%",
+    ease: "power2.out"
+  });
+}
+
+imageZoomAndCenterWithTextHide();
+
+
+// Web Design Section Animetion End

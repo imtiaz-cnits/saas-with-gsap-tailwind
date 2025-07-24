@@ -51,10 +51,14 @@
     --bg-color-1: #222931;
     --bg-color-2: #5E7960;
     --bg-color-3: #201E1A;
+    --bg-color-4: #FDC799;
+    --bg-color-5: #395051;
     --card-border: #262A2F;
     --card-shadow: drop-shadow(110px 94px 140px rgba(0, 0, 0, 0.21));
     --text: #FFF;
     --color: #00C39A;
+    --color-1: #EEBE41;
+    --color-2: #EEEEEE;
     --black: #000000;
     --hero-bg: radial-gradient(50.06% 50.06% at 50% 50.06%, #183EC2 0%, #EAEEFE 100%);
   }
@@ -194,3 +198,8 @@ body {
 
 
 /* Better Trade Section End */
+
+.app_web_design {
+  position: relative;
+  overflow: hidden;
+}

@@ -22,7 +22,7 @@
                             <img src="./assets/img/navbar-logo.png" alt="Logo"
                                 class="h-10 w-auto object-contain transition-opacity duration-300 hover:opacity-80" />
                         </a> -->
-                        <a href="#" class="flex items-center py-4 px-2">
+                        <a href="./index.html" class="flex items-center py-4 px-2">
                             <span class="font-semibold text-[var(--primary-color)] text-[28px]">Stitle.</span>
                         </a>
                     </div>
@@ -52,7 +52,7 @@
 
                     <div class="hidden md:flex nav_cta_btn">
                         <a href="#"
-                            class="py-2 px-5 font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out">Get
+                            class="py-2 px-5 min-w-[120px] inline-block font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out">Get
                             for free
                         </a>
                     </div>
@@ -285,7 +285,7 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
 
             <div class="section_first_part px-[10px]">
                 <div class="section_cards flex-[0_0_100%] flex gap-4">
-                    <div class="section_card relative bg-[#fcd34d] text-black md:pt-[20px] md:pr-[0px] md:pb-[50px] md:pl-[40px]  
+                    <div class="section_card relative bg-[#f2bf93] text-black md:pt-[20px] md:pr-[0px] md:pb-[50px] md:pl-[40px]  
                     pt-[15px] pr-[0px] pb-[70px] pl-[15px]
                     rounded-md flex-[100%] md:flex-[40%]">
                         <h2 class="section_card_count text-[28px] md:text-[42px] font-medium">86</h2>
@@ -364,11 +364,9 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
             </div>
 
             <div class="section_second_part px-[10px]">
-                <div class="section_second_part_box bg-[#489BF9] [background-image:radial-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),
-                    radial-gradient(rgba(255,255,255,0.02)_1px,transparent_1px)] 
-                    [background-size:5px_5px,7px_7px] [background-position:0_0,3px_3px]
-                     [background-blend-mode:multiply] pt-[10px] md:pt-[20px]
-                      pl-[20px] md:pl-[40px] pb-[80px] md:pb-[10px] rounded-md relative overflow-hidden">
+                <div
+                    class="section_second_part_box bg-[#489BF9] pt-[10px] md:pt-[20px]
+                      pl-[20px] md:pl-[40px] pb-[80px] md:pb-[10px] rounded-md relative overflow-hidden bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] bg-blend-overlay bg-cover bg-repeat opacity-90">
                     <h2
                         class="section_second_part_title text-[30px] sm:text-[36px] md:text-[42px] font-bold text-black mb-3 w-[90%] sm:w-[70%] md:w-[60%]">
                         Better tech to better trade
@@ -546,7 +544,7 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
 
     <!-- Service Section Start -->
     <section
-        class="our_service_section_wrapper bg-[color:var(--bg-color)] text-white px-[10px] md:px-[60px] py-[10px] md:py-[80px]">
+        class="our_service_section_wrapper bg-[color:var(--bg-color)] text-[var(--primary-color)] px-[10px] md:px-[0px] py-[10px] md:py-[80px]">
         <div class="section_container">
             <div class="flex flex-col lg:flex-row gap-[30px] md:gap-[40px] mb-[20px] md:mb-[60px] items-start">
 
@@ -565,8 +563,16 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                 </div>
 
                 <div class="w-full lg:w-[32%]">
-                    <div
-                        class="service_card_item_scroll border border-[var(--card-border)] pt-[40px] pb-[30px] pl-[40px] pr-[30px] rounded-[8px] transition duration-500 ease-in-out w-full max-w-md h-full min-h-[300px]">
+                    <div class="service_card_item_scroll
+         border border-[var(--card-border)]
+         pt-[40px] pb-[30px] pl-[40px] pr-[30px]
+         rounded-[8px]
+         w-full max-w-md h-full min-h-[300px]
+         transition-all duration-[700ms] ease-in-out
+      hover:shadow-[45px_45px_70px_0px_rgba(0,0,0,0.1)]
+         hover:-translate-x-[4px] hover:-translate-y-[4px]
+         hover:border-transparent
+  ">
                         <div class="service_card_icon_wrapper mb-[45px]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none"
                                 viewBox="0 0 24 24">
@@ -582,13 +588,22 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
             <div
                 class="our_service_card_grid_wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] md:gap-[50px]">
-                <div
-                    class="service_card_item_scroll border border-[var(--card-border)] pt-[40px] pb-[30px] pl-[40px] pr-[30px] rounded-[8px] transition duration-500 ease-in-out w-full max-w-md h-full min-h-[300px]">
+                <div class="service_card_item_scroll
+         border border-[var(--card-border)]
+         pt-[40px] pb-[30px] pl-[40px] pr-[30px]
+         rounded-[8px]
+         w-full max-w-md h-full min-h-[300px]
+         transition-all duration-[700ms] ease-in-out
+      hover:shadow-[45px_45px_70px_0px_rgba(0,0,0,0.1)]
+         hover:-translate-x-[4px] hover:-translate-y-[4px]
+         hover:border-transparent
+  ">
                     <div class="service_card_icon_wrapper mb-[45px]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="43" height="44" viewBox="0 0 43 44" fill="none">
                             <rect x="1" y="1" width="33" height="33" rx="16.5" stroke="#00C39A" stroke-width="2" />
@@ -606,8 +621,16 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                 </div>
 
                 <!-- Branding -->
-                <div
-                    class="service_card_item_scroll border border-[var(--card-border)] pt-[40px] pb-[30px] pl-[40px] pr-[30px] rounded-[8px] transition duration-500 ease-in-out w-full max-w-md h-full min-h-[300px]">
+                <div class="service_card_item_scroll
+         border border-[var(--card-border)]
+         pt-[40px] pb-[30px] pl-[40px] pr-[30px]
+         rounded-[8px]
+         w-full max-w-md h-full min-h-[300px]
+         transition-all duration-[700ms] ease-in-out
+      hover:shadow-[45px_45px_70px_0px_rgba(0,0,0,0.1)]
+         hover:-translate-x-[4px] hover:-translate-y-[4px]
+         hover:border-transparent
+  ">
                     <div class="service_card_icon_wrapper mb-[40px]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="51" height="44" viewBox="0 0 51 44" fill="none">
                             <rect x="8" y="1" width="33" height="33" rx="16.5" stroke="#00C39A" stroke-width="2" />
@@ -625,8 +648,16 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                 </div>
 
                 <!-- Motion Graphic -->
-                <div
-                    class="service_card_item_scroll border border-[var(--card-border)] pt-[40px] pb-[30px] pl-[40px] pr-[30px] rounded-[8px] transition duration-500 ease-in-out w-full max-w-md h-full min-h-[300px]">
+                <div class="service_card_item_scroll
+         border border-[var(--card-border)]
+         pt-[40px] pb-[30px] pl-[40px] pr-[30px]
+         rounded-[8px]
+         w-full max-w-md h-full min-h-[300px]
+         transition-all duration-[700ms] ease-in-out
+      hover:shadow-[45px_45px_70px_0px_rgba(0,0,0,0.1)]
+         hover:-translate-x-[4px] hover:-translate-y-[4px]
+         hover:border-transparent
+  ">
                     <div class="service_card_icon_wrapper mb-[40px]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="51" height="35" viewBox="0 0 51 35" fill="none">
                             <rect x="1" y="1" width="49" height="33" rx="7" stroke="#00C39A" stroke-width="2" />
@@ -649,12 +680,152 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
     </section>
     <!-- Service Section End -->
 
+    <!-- App and Web Design Section Start -->
+    <section class="app_web_design bg-[color:var(--bg-color-1)]">
+        <div class="section_container">
+            <div class="app_web_design_wepper px-[10px] md:px-[0px] py-[60px] md:py-[120px]">
+                <!-- App Design -->
+                <div class="app_design_items flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-[4%]">
+
+                    <div class="app_design_text_section fade_in_scroll w-full md:w-[60%] md:px-0">
+
+                        <div class="app_design_title_small flex items-center gap-1 mb-3 fade_in_scroll">
+                            <div class="app_design_line h-[1px] w-[18px] md:w-[20px] bg-[color:var(--color-1)]"></div>
+                            <p class="text-[var(--color-1)] text-[20px] md:text-[22px] font-normal m-0">App Design</p>
+                        </div>
+
+                        <h2
+                            class="app_design_title_large text-[var(--primary-color)] text-[38px] md:text-[48px] font-semibold pt-[6px] md:pt-[10px] mb-3 md:mb-4 max-w-md leading-[1.4]">
+                            Our product we’ve created before
+                        </h2>
+
+                        <p
+                            class="app_design_paragraph text-[var(--primary-color)] text-[16px] md:text-[18px] mb-4 md:mb-6 pt-[6px] md:pt-[10px] max-w-md">
+                            We have many interesting services with professional team.
+                            that will help your work to be better
+                        </p>
+
+                        <div class="explore_more_btn pt-[6px] md:pt-[10px]">
+                            <a href="#"
+                                class="py-2 px-4 md:py-2 md:px-5 min-w-[120px] inline-block font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out text-center">
+                                Explore More
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="app_design_image_section bg-[color:var(--bg-color-4)] rounded-lg fade_in_scroll h-[570px] md:h-[570px] w-full md:w-[40%] overflow-hidden mt-6 md:mt-0">
+                        <img src="./assets/img/app-dedign.png" alt="App design preview"
+                            class="app_design_image rounded-lg w-full h-full object-cover block mx-auto" />
+                    </div>
+
+                </div>
+                <!-- Web Design -->
+                <div
+                    class="web_design_items flex flex-col-reverse md:flex-row items-center md:items-center gap-4 md:gap-[4%] w-full pt-[60px] md:pt-[120px]">
+
+                    <div class="web_image w-[100%] md:w-[60%]">
+                        <div
+                            class="web_design_image_section bg-[color:var(--bg-color-5)] pt-[20px] pb-[20px] pl-[10px] pr-[10px] md:pt-[30px] md:pb-[30px] md:pl-[20px] md:pr-[20px]  rounded-lg fade_in_scroll h-[100%] md:h-[100%] w-full md:w-[60%] overflow-hidden mt-6 md:mt-0">
+                            <img src="./assets/img/web-design.png" alt="App design preview"
+                                class="w-full h-[100%] bg-[url('./assets/img/web-design.png')] bg-cover bg-center bg-no-repeat rounded-md overflow-hidden" />
+                        </div>
+
+                    </div>
+
+                    <div class="web_design_item w-[100%] md:w-[40%]">
+                        <div class="web_design_text_section fade_in_scroll w-full md:px-0">
+
+                            <div class="web_design_title_small flex items-center gap-1 mb-3 fade_in_scroll">
+                                <div class="web_design_line h-[1px] w-[18px] md:w-[20px] bg-[color:var(--color-1)]">
+                                </div>
+                                <p class="text-[var(--color-1)] text-[20px] md:text-[22px] font-normal m-0">App Design
+                                </p>
+                            </div>
+
+                            <h2
+                                class="web_design_title_large text-[var(--primary-color)] text-[38px] md:text-[48px] font-semibold pt-[6px] md:pt-[10px] mb-3 md:mb-4 max-w-md leading-[1.4]">
+                                Our product we’ve created before
+                            </h2>
+
+                            <p
+                                class="web_design_paragraph text-[var(--primary-color)] text-[16px] md:text-[18px] mb-4 md:mb-6 pt-[6px] md:pt-[10px] max-w-md">
+                                We have many interesting services with professional team.
+                                that will help your work to be better
+                            </p>
+
+                            <div class="explore_more_btn pt-[6px] md:pt-[10px]">
+                                <a href="#"
+                                    class="py-2 px-4 md:py-2 md:px-5 min-w-[120px] inline-block font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out text-center">
+                                    Explore More
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- App and Web Design Section End -->
+
+    <!-- App and Web Design Section Start -->
+    <section class="app_web_design bg-[color:var(--bg-color-1)]">
+        <div class="section_container">
+            <div class="app_web_design_wepper px-[10px] md:px-[0px] py-[60px] md:py-[120px]">
+                <!-- App Design -->
+                <div class="app_design_items flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-[4%]">
+
+                    <div class="app_design_text_section fade_in_scroll w-full md:w-[60%] md:px-0">
+
+                        <div class="app_design_title_small flex items-center gap-1 mb-3 fade_in_scroll">
+                            <div class="app_design_line h-[1px] w-[18px] md:w-[20px] bg-[color:var(--color-1)]"></div>
+                            <p class="text-[var(--color-1)] text-[20px] md:text-[22px] font-normal m-0">App Design</p>
+                        </div>
+
+                        <h2
+                            class="app_design_title_large text-[var(--primary-color)] text-[38px] md:text-[48px] font-semibold pt-[6px] md:pt-[10px] mb-3 md:mb-4 max-w-md leading-[1.4]">
+                            Our product we’ve created before
+                        </h2>
+
+                        <p
+                            class="app_design_paragraph text-[var(--primary-color)] text-[16px] md:text-[18px] mb-4 md:mb-6 pt-[6px] md:pt-[10px] max-w-md">
+                            We have many interesting services with professional team.
+                            that will help your work to be better
+                        </p>
+
+                        <div class="explore_more_btn pt-[6px] md:pt-[10px]">
+                            <a href="#"
+                                class="py-2 px-4 md:py-2 md:px-5 min-w-[120px] inline-block font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out text-center">
+                                Explore More
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="app_design_image_section bg-[color:var(--bg-color-4)] rounded-lg fade_in_scroll h-[570px] md:h-[570px] w-full md:w-[40%] overflow-hidden mt-6 md:mt-0">
+                        <img src="./assets/img/app-dedign.png" alt="App design preview"
+                            class="app_design_image rounded-lg w-full h-full object-cover block mx-auto" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- App and Web Design Section End -->
+
 
 
     <!-- js link start -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
         integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/script.js"></script>
 
