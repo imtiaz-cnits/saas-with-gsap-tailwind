@@ -173,6 +173,23 @@ body {
   transform: scaleX(0);
 }
 
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes borderRotate {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.animate_border {
+  animation: borderRotate 4s linear infinite;
+}
+
+
 /* Navbar End */
 
 
@@ -193,6 +210,27 @@ body {
   border-radius: 9999px;
   width: 50px;
   height: 50px;
+}
+
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Skeleton shimmer effect class */
+.skeleton_animate {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.05) 100%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
 }
 
 /* Better Trade Section End */

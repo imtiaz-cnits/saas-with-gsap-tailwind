@@ -52,10 +52,24 @@
 
                     <div class="hidden md:flex nav_cta_btn">
                         <a href="#"
-                            class="py-2 px-5 min-w-[120px] inline-block font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out">Get
-                            for free
+                            class="relative py-2 px-5 min-w-[120px] inline-block font-medium text-white rounded-3xl font-primary transition duration-300 ease-in-out hover:brightness-110 animate_border"
+                            style="
+      border: 2px solid transparent;
+      background: 
+        linear-gradient(45deg, #0f172a, #1e293b) padding-box,
+conic-gradient(
+          from var(--border-angle),
+          rgba(100,116,139,0.5) 75%,
+          #00C39A 85%,
+          #00C39A 90%,
+          #00C39A 95%,
+          rgba(100,116,139,0.5) 100%
+        ) border-box; background-origin: border-box; background-clip: padding-box, border-box;
+    ">
+                            Get for free
                         </a>
                     </div>
+
 
                     <div class="md:hidden flex items-center nav_mobile_btn pr-[10px]">
                         <button class="outline-none nav_mobile-button">
@@ -288,7 +302,7 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                     <div class="section_card relative bg-[#f2bf93] text-black md:pt-[20px] md:pr-[0px] md:pb-[50px] md:pl-[40px]  
                     pt-[15px] pr-[0px] pb-[70px] pl-[15px]
                     rounded-md flex-[100%] md:flex-[40%]">
-                       <h2 id="count2" class="section_card_count text-[28px] md:text-[42px] font-medium">0</h2>
+                        <h2 id="count2" class="section_card_count text-[28px] md:text-[42px] font-medium">0</h2>
                         <p class="section_card_label text-[20px] md:text-[26px] font-medium">
                             Project is<br>pending
                         </p>
@@ -306,7 +320,7 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                     <div class="section_card relative bg-[#fcd34d] text-black md:pt-[20px] md:pr-[0px] md:pb-[50px] md:pl-[40px]  
                     pt-[15px] pr-[0px] pb-[30px] pl-[15px]
                     rounded-md flex-[100%] md:flex-[60%]">
-                       <h2 id="count1" class="section_card_count text-[28px] md:text-[42px] font-medium">0</h2> 
+                        <h2 id="count1" class="section_card_count text-[28px] md:text-[42px] font-medium">0</h2>
                         <p class="section_card_label text-[20px] md:text-[26px] font-medium">Awards</p>
                         <svg class="section_card_svg_1 absolute top-[64%] left-[72%]
   w-[140px] h-[140px] md:w-[250px] md:h-[165px]
@@ -346,11 +360,14 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                     </div>
 
 
-                    <div class="section_progress_bar_1 h-5 bg-[color:var(--bg-color-2)] rounded mt-4 w-[50%]">
+                    <div
+                        class="section_progress_bar_1 h-5 bg-[color:var(--bg-color-2)] rounded mt-4 w-[50%] skeleton_animate">
                     </div>
-                    <div class="section_progress_bar_2 h-5 bg-[color:var(--bg-color-2)] rounded mt-4 w-[35%]">
+                    <div
+                        class="section_progress_bar_2 h-5 bg-[color:var(--bg-color-2)] rounded mt-4 w-[35%] skeleton_animate">
                     </div>
-                    <div class="section_progress_bar_2 h-5 bg-[color:var(--bg-color-2)] rounded mt-4 w-[45%]">
+                    <div
+                        class="section_progress_bar_2 h-5 bg-[color:var(--bg-color-2)] rounded mt-4 w-[45%] skeleton_animate">
                     </div>
 
                     <svg class="section_start_project_svg_1 absolute bottom-[0px] right-[0px] w-[80px] h-[72px] sm:w-[150px] sm:h-[110px]

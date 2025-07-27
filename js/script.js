@@ -358,73 +358,92 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 ////////////////////////////////////////// section start project status Start ////////////////////////////////////////////
-function rainEffectInSvg() {
-  const svg = document.querySelector('.section_start_project_svg_1');
-  const svgNS = "http://www.w3.org/2000/svg";
-  const dropsCount = 20;
 
-  // Create drops inside SVG
-  for (let i = 0; i < dropsCount; i++) {
-    const drop = document.createElementNS(svgNS, "line");
-    drop.setAttribute("x1", Math.random() * 84); // SVG width = 84 from viewBox
-    drop.setAttribute("y1", -10 - Math.random() * 20);
-    drop.setAttribute("x2", drop.getAttribute("x1"));
-    drop.setAttribute("y2", drop.getAttribute("y1") + 10);
-    drop.setAttribute("stroke", "#00aaff");
-    drop.setAttribute("stroke-width", "1");
-    drop.setAttribute("stroke-linecap", "round");
-    drop.style.opacity = 0.5;
+function animateMultiplePaths(svgSelector) {
+  const paths = document.querySelectorAll(`${svgSelector} path`);
+  
+  paths.forEach((path, index) => {
+    const length = path.getTotalLength();
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = length;
+    path.style.stroke = "#FFD155";
+    path.style.fill = "none";
+    path.style.strokeWidth = "2";
 
-    svg.appendChild(drop);
-
-    animateDrop(drop, 84); // animate with SVG height 81 approx
-  }
-
-  function animateDrop(drop, svgHeight) {
-    gsap.to(drop, {
-      attr: { y1: svgHeight + 10, y2: svgHeight + 20 },
-      duration: 1 + Math.random() * 1.5,
-      ease: "linear",
+    gsap.to(path, {
+      strokeDashoffset: 0,
+      duration: 2,
+      delay: index * 0.5,  // delay diye ek ek kore stroke draw hobe
+      ease: "power2.inOut",
       repeat: -1,
-      delay: Math.random() * 2,
-      onRepeat: () => {
-        const startY = -10 - Math.random() * 20;
-        const x = Math.random() * 84;
-        drop.setAttribute("x1", x);
-        drop.setAttribute("x2", x);
-        drop.setAttribute("y1", startY);
-        drop.setAttribute("y2", startY + 10);
-      },
+      yoyo: true,
+      repeatDelay: 0.8,
     });
-  }
+  });
 }
 
-rainEffectInSvg();
+// Call:
+animateMultiplePaths('.section_start_project_svg_1');
+
 
 ///////////////////////////////////////// section start project status End //////////////////////////////////////////
 
 
 ////////////////////////////////// section second part Start /////////////////////////////////////////
-  function waveAnimateByClass(className) {
-    const paths = document.querySelectorAll(`.${className}`);
-    paths.forEach((path, index) => {
-      const length = path.getTotalLength();
-      path.style.strokeDasharray = length;
-      path.style.strokeDashoffset = 0;
-      gsap.to(path.style, {
-        strokeDashoffset: length * 0.5,
-        duration: 2 + index * 0.5,
-        yoyo: true,
-        repeat: -1,
-        ease: "sine.inOut",
-        delay: index * 0.3,
-      });
-    });
+ async function animateWaveSequentially(svgSelector) {
+  const paths = document.querySelectorAll(`${svgSelector} .wave_path`);
+  if (paths.length === 0) {
+    console.error("No wave_path elements found inside", svgSelector);
+    return;
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    waveAnimateByClass("wave_path");
+  while(true) {
+    for (const path of paths) {
+      await gsap.to(path, {
+        x: 10,
+        scaleX: 1.05,
+        opacity: 0.9,
+        duration: 1.3,
+        ease: "power1.out",
+      }).then(() => 
+        gsap.to(path, {
+          x: 0,
+          scaleX: 1,
+          opacity: 1,
+          duration: 1.3,
+          ease: "power1.in",
+        })
+      );
+    }
+  }
+}
+
+// Call function
+animateWaveSequentially('.section_second_part_svg svg');
+
+
+
+  function animateImageSway(selector) {
+  const img = document.querySelector(selector);
+  if (!img) {
+    console.error(`Image not found: ${selector}`);
+    return;
+  }
+
+  gsap.to(img, {
+    duration: 3,
+    scale: 1.05,
+    y: 5,
+    rotation: 1.5,
+    ease: "sine.inOut",
+    repeat: -1,
+    yoyo: true,
   });
+}
+
+// Call korar example:
+animateImageSway('.section_second_part_img_wrapper img');
+
 ///////////////////////////////// section second part End ///////////////////////////////////////////
 
 
