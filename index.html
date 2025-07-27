@@ -288,7 +288,7 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                     <div class="section_card relative bg-[#f2bf93] text-black md:pt-[20px] md:pr-[0px] md:pb-[50px] md:pl-[40px]  
                     pt-[15px] pr-[0px] pb-[70px] pl-[15px]
                     rounded-md flex-[100%] md:flex-[40%]">
-                        <h2 class="section_card_count text-[28px] md:text-[42px] font-medium">86</h2>
+                       <h2 id="count2" class="section_card_count text-[28px] md:text-[42px] font-medium">0</h2>
                         <p class="section_card_label text-[20px] md:text-[26px] font-medium">
                             Project is<br>pending
                         </p>
@@ -306,7 +306,7 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                     <div class="section_card relative bg-[#fcd34d] text-black md:pt-[20px] md:pr-[0px] md:pb-[50px] md:pl-[40px]  
                     pt-[15px] pr-[0px] pb-[30px] pl-[15px]
                     rounded-md flex-[100%] md:flex-[60%]">
-                        <h2 class="section_card_count text-[28px] md:text-[42px] font-medium">453</h2>
+                       <h2 id="count1" class="section_card_count text-[28px] md:text-[42px] font-medium">0</h2> 
                         <p class="section_card_label text-[20px] md:text-[26px] font-medium">Awards</p>
                         <svg class="section_card_svg_1 absolute top-[64%] left-[72%]
   w-[140px] h-[140px] md:w-[250px] md:h-[165px]
@@ -375,13 +375,13 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                         class="section_second_part_svg absolute top-[15%] right-[4%] md:top-[8%] md:right-[8%] rounded-full">
                         <svg class="w-[80%] md:w[100%] md:h[100%]" xmlns="http://www.w3.org/2000/svg" width="42"
                             height="63" viewBox="0 0 42 63" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
+                            <path class="wave_path" fill-rule="evenodd" clip-rule="evenodd"
                                 d="M16.357 13.4097C16.3435 13.3118 16.33 13.2146 16.3164 13.1168C13.8506 13.3976 11.3853 13.6783 8.91938 13.9591C8.93644 14.0817 8.9535 14.2036 8.96997 14.3256C11.4323 14.0201 13.8947 13.7152 16.357 13.4097ZM2.91291 31.4691C1.38879 30.7355 0.72644 29.79 0.414087 28.5016C-1.31474 21.3457 2.31173 12.5318 12.3882 12.2359C17.1711 12.0952 20.9706 10.3697 23.2435 5.76347C24.0353 4.15984 25.0323 2.63531 26.1241 1.22852C26.6211 0.587919 27.557 0.0559941 28.33 0.000446911C28.6988 -0.0261191 29.4282 1.13796 29.5064 1.82203C29.6359 2.95833 29.7023 4.32105 29.2135 5.2732C27.7735 8.07773 26.2235 10.8623 24.3823 13.3982C22.6776 15.7463 20.2076 16.8711 17.3064 17.5763C14.3976 18.2827 11.4394 17.6934 8.54644 18.7392C5.85468 19.7118 2.72173 24.478 2.90056 27.4987C2.97291 28.7201 2.91291 29.95 2.91291 31.4691Z"
                                 fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
+                            <path class="wave_path" fill-rule="evenodd" clip-rule="evenodd"
                                 d="M10.2552 39.8813C10.1814 38.91 9.85526 37.8788 10.076 36.9767C11.1429 32.6102 17.2392 29.275 21.3305 31.2159C26.9027 33.8588 30.9765 31.8021 34.9413 28.166C36.284 26.9347 37.8457 25.8949 39.4379 24.9904C39.887 24.7351 41.2198 25.0746 41.4095 25.4781C41.8235 26.3554 42.258 27.9331 41.8135 28.3752C39.1873 30.9853 36.5516 33.7141 33.4546 35.7022C30.1128 37.8482 26.2457 38.5814 22.3266 36.5449C20.5834 35.6394 18.8272 34.7119 16.6531 35.263C14.3079 35.8572 12.5969 37.13 11.4158 39.1694C11.2665 39.4282 11.0656 39.6582 10.8888 39.902C10.6774 39.8951 10.466 39.8882 10.2552 39.8813Z"
                                 fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
+                            <path class="wave_path" fill-rule="evenodd" clip-rule="evenodd"
                                 d="M36.8499 58.5883C36.8317 58.4696 36.8135 58.351 36.7948 58.2329H25.4729C25.4712 58.351 25.47 58.4696 25.4683 58.5883H36.8499ZM10.0005 53.7073C10.052 52.5592 10.0884 51.7514 10.1247 50.9435C11.3773 52.8415 12.6047 51.1341 13.7219 51.0633H11.9169C11.4915 50.2409 13.9141 50.5934 12.109 49.3892C14.3898 49.0022 16.4561 48.2738 18.1089 50.0035C18.826 50.7547 20.3117 51.1931 20.2273 53.0274C20.2912 53.0754 20.8771 53.3127 21.1489 53.7459C23.3359 57.238 26.7474 57.5209 30.354 57.3531C32.3173 57.2614 34.301 56.9749 36.2373 57.1655C37.709 57.3105 39.1707 57.9576 40.5428 58.586C41.8604 59.1898 41.97 60.6284 42.0004 61.8402C42.0092 62.1991 40.8861 62.9397 40.3243 62.9005C36.6632 62.6474 33.0139 62.2277 29.3323 61.9816C30.1455 61.9273 30.9575 61.8735 31.7706 61.8191C31.78 61.7326 31.7882 61.6455 31.7976 61.5596C31.4279 61.5029 31.0389 61.5017 30.6938 61.3784C30.0763 61.1586 29.4618 60.9101 28.8917 60.5916C28.2637 60.2408 27.6878 59.7971 26.9519 59.696C27.2255 60.249 27.4985 60.8026 27.6467 61.1019C26.9021 61.3129 26.4902 61.4912 26.0667 61.5309C25.6454 61.5701 25.0853 61.6268 24.8041 61.4029C23.5551 60.4092 22.0535 59.8556 21.2116 58.1832C20.1611 56.0946 18.4821 54.3175 17.0402 52.4318C16.8399 52.1693 16.4345 51.8817 16.1404 51.8987C14.5204 51.9916 12.8958 52.1185 11.2947 52.3698C10.9256 52.4277 10.6408 53.021 10.0005 53.7073Z"
                                 fill="white" />
                         </svg>
@@ -771,53 +771,6 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
     </section>
     <!-- App and Web Design Section End -->
 
-    <!-- App and Web Design Section Start -->
-    <section class="app_web_design bg-[color:var(--bg-color-1)]">
-        <div class="section_container">
-            <div class="app_web_design_wepper px-[10px] md:px-[0px] py-[60px] md:py-[120px]">
-                <!-- App Design -->
-                <div class="app_design_items flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-[4%]">
-
-                    <div class="app_design_text_section fade_in_scroll w-full md:w-[60%] md:px-0">
-
-                        <div class="app_design_title_small flex items-center gap-1 mb-3 fade_in_scroll">
-                            <div class="app_design_line h-[1px] w-[18px] md:w-[20px] bg-[color:var(--color-1)]"></div>
-                            <p class="text-[var(--color-1)] text-[20px] md:text-[22px] font-normal m-0">App Design</p>
-                        </div>
-
-                        <h2
-                            class="app_design_title_large text-[var(--primary-color)] text-[38px] md:text-[48px] font-semibold pt-[6px] md:pt-[10px] mb-3 md:mb-4 max-w-md leading-[1.4]">
-                            Our product we’ve created before
-                        </h2>
-
-                        <p
-                            class="app_design_paragraph text-[var(--primary-color)] text-[16px] md:text-[18px] mb-4 md:mb-6 pt-[6px] md:pt-[10px] max-w-md">
-                            We have many interesting services with professional team.
-                            that will help your work to be better
-                        </p>
-
-                        <div class="explore_more_btn pt-[6px] md:pt-[10px]">
-                            <a href="#"
-                                class="py-2 px-4 md:py-2 md:px-5 min-w-[120px] inline-block font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out text-center">
-                                Explore More
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div
-                        class="app_design_image_section bg-[color:var(--bg-color-4)] rounded-lg fade_in_scroll h-[570px] md:h-[570px] w-full md:w-[40%] overflow-hidden mt-6 md:mt-0">
-                        <img src="./assets/img/app-dedign.png" alt="App design preview"
-                            class="app_design_image rounded-lg w-full h-full object-cover block mx-auto" />
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- App and Web Design Section End -->
-
-
 
     <!-- js link start -->
 
@@ -826,6 +779,10 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
         integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js"
+        integrity="sha512-vuNgw6lF+p97XmL9lFpbQZWBXxIFnwUVt7J/uknE4NJru5GJjjhIAauXdDtNdezqOJFnit+M3AeaM+gZ93hlmg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/script.js"></script>
 

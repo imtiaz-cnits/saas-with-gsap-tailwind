@@ -216,6 +216,218 @@ paths.forEach((path, i) => {
 // hero svg animetion end
 
 
+///////////////////////////////////////////// Better Trade Section Start ///////////////////////////////////////
+
+    function startJirJirCloudAnimation() {
+    // Glow effect (optional but looks nice)
+    gsap.to(".section_card_svg", {
+      filter: "drop-shadow(0 0 10px #00C39A)",
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut"
+    });
+
+    // Jir Jir Kapa animation (vibration)
+    gsap.to(".section_card_svg", {
+      x: "+=1",
+      y: "-=1",
+      duration: 0.05,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+  }
+
+  // Start on page load
+  window.addEventListener("DOMContentLoaded", startJirJirCloudAnimation);
+
+//////////////////////////////////////////// Better Trade Section End /////////////////////////////////////////
+
+//////////////////////////////////////////// Better Trade Section 1 Start /////////////////////////////////////////
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const snakePath = document.querySelector('.section_card_svg_1 path');
+  const originalFill = snakePath.getAttribute('fill');
+  const pathLength = snakePath.getTotalLength();
+
+  function resetToInitial() {
+    gsap.set(snakePath, {
+      stroke: 'black',
+      strokeWidth: 1,
+      fill: 'none',
+      strokeDasharray: pathLength,
+      strokeDashoffset: pathLength,
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transformOrigin: '50% 50%',
+    });
+  }
+
+  function resetToSecond() {
+    gsap.set(snakePath, {
+      stroke: 'black',
+      strokeWidth: 1,
+      fill: 'none',
+      strokeDasharray: pathLength,
+      strokeDashoffset: 0,
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transformOrigin: '50% 50%',
+    });
+  }
+
+  function playFirstAnimation() {
+    resetToInitial();
+
+    const tl1 = gsap.timeline({
+      onComplete: playSecondAnimation,
+    });
+
+    tl1.to(snakePath, {
+      strokeDashoffset: 0,
+      duration: 3.5,
+      ease: 'power3.inOut',
+    })
+    .to(snakePath, {
+      strokeWidth: 0,
+      fill: originalFill,
+      duration: 0.7,
+      ease: 'power2.out',
+    })
+    .to(snakePath, {
+      x: () => (Math.random() * 2) - 1,
+      y: () => (Math.random() * 2) - 1,
+      duration: 2,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: 1,
+    });
+  }
+
+  function playSecondAnimation() {
+    resetToSecond();
+
+    gsap.to(snakePath, {
+      strokeDashoffset: -pathLength,
+      duration: 5,
+      ease: 'linear',
+      onComplete: playFirstAnimation,
+    });
+  }
+
+  playFirstAnimation();
+});
+
+
+//////////////////////////////////////////// Better Trade Section 1 End /////////////////////////////////////////
+
+//////////////////////////////////////////// Better Trade Section Counting Start /////////////////////////////////////////
+document.addEventListener('DOMContentLoaded', function() {
+  const count1 = { val: 0 };
+  const count2 = { val: 0 };
+
+  const target1 = 86;
+  const target2 = 453;
+
+  const duration = 3; // seconds
+
+  gsap.to(count1, {
+    val: target1,
+    duration: duration,
+    ease: "power1.out",
+    onUpdate: () => {
+      document.getElementById('count1').textContent = Math.floor(count1.val);
+    }
+  });
+
+  gsap.to(count2, {
+    val: target2,
+    duration: duration,
+    ease: "power1.out",
+    onUpdate: () => {
+      document.getElementById('count2').textContent = Math.floor(count2.val);
+    }
+  });
+});
+
+//////////////////////////////////////////// Better Trade Section Counting End /////////////////////////////////////////
+
+
+////////////////////////////////////////// section start project status Start ////////////////////////////////////////////
+function rainEffectInSvg() {
+  const svg = document.querySelector('.section_start_project_svg_1');
+  const svgNS = "http://www.w3.org/2000/svg";
+  const dropsCount = 20;
+
+  // Create drops inside SVG
+  for (let i = 0; i < dropsCount; i++) {
+    const drop = document.createElementNS(svgNS, "line");
+    drop.setAttribute("x1", Math.random() * 84); // SVG width = 84 from viewBox
+    drop.setAttribute("y1", -10 - Math.random() * 20);
+    drop.setAttribute("x2", drop.getAttribute("x1"));
+    drop.setAttribute("y2", drop.getAttribute("y1") + 10);
+    drop.setAttribute("stroke", "#00aaff");
+    drop.setAttribute("stroke-width", "1");
+    drop.setAttribute("stroke-linecap", "round");
+    drop.style.opacity = 0.5;
+
+    svg.appendChild(drop);
+
+    animateDrop(drop, 84); // animate with SVG height 81 approx
+  }
+
+  function animateDrop(drop, svgHeight) {
+    gsap.to(drop, {
+      attr: { y1: svgHeight + 10, y2: svgHeight + 20 },
+      duration: 1 + Math.random() * 1.5,
+      ease: "linear",
+      repeat: -1,
+      delay: Math.random() * 2,
+      onRepeat: () => {
+        const startY = -10 - Math.random() * 20;
+        const x = Math.random() * 84;
+        drop.setAttribute("x1", x);
+        drop.setAttribute("x2", x);
+        drop.setAttribute("y1", startY);
+        drop.setAttribute("y2", startY + 10);
+      },
+    });
+  }
+}
+
+rainEffectInSvg();
+
+///////////////////////////////////////// section start project status End //////////////////////////////////////////
+
+
+////////////////////////////////// section second part Start /////////////////////////////////////////
+  function waveAnimateByClass(className) {
+    const paths = document.querySelectorAll(`.${className}`);
+    paths.forEach((path, index) => {
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = 0;
+      gsap.to(path.style, {
+        strokeDashoffset: length * 0.5,
+        duration: 2 + index * 0.5,
+        yoyo: true,
+        repeat: -1,
+        ease: "sine.inOut",
+        delay: index * 0.3,
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    waveAnimateByClass("wave_path");
+  });
+///////////////////////////////// section second part End ///////////////////////////////////////////
+
+
 // Trusted Customers Logo Animetion Start
 
 function marqueeAnimation() {
@@ -280,38 +492,40 @@ marqueeAnimation();
 
 // Web Design Section Animetion Start
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-function imageZoomAndCenterWithTextHide() {
-  const imageDiv = document.querySelector(".web_design_image_section");
-  const textDiv = document.querySelector(".web_design_text_section");
+// function imageZoomAndCenterWithTextHide() {
+//   const imageDiv = document.querySelector(".web_design_image_section");
+//   const textDiv = document.querySelector(".web_design_text_section");
 
-  if (!imageDiv || !textDiv) return;
+//   if (!imageDiv || !textDiv) return;
 
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: imageDiv,
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-      markers: false,
-      onEnter: () => gsap.to(textDiv, {autoAlpha: 0, duration: 0.4}),
-      onLeaveBack: () => gsap.to(textDiv, {autoAlpha: 1, duration: 0.4}),
-      onLeave: () => gsap.to(textDiv, {autoAlpha: 1, duration: 0.4}),
-      onEnterBack: () => gsap.to(textDiv, {autoAlpha: 0, duration: 0.4}),
-    }
-  })
-  .to(imageDiv, {
-    scale: 2,
-    marginLeft: "auto",
-    marginRight: "auto",
-    overflow:"hedden",
-    width: "100%",
-    ease: "power2.out"
-  });
-}
+//   gsap.timeline({
+//     scrollTrigger: {
+//       trigger: imageDiv,
+//       start: "top center",
+//       end: "bottom center",
+//       scrub: true,
+//       markers: false,
+//       onEnter: () => gsap.to(textDiv, {autoAlpha: 0, duration: 0.4}),
+//       onLeaveBack: () => gsap.to(textDiv, {autoAlpha: 1, duration: 0.4}),
+//       onLeave: () => gsap.to(textDiv, {autoAlpha: 1, duration: 0.4}),
+//       onEnterBack: () => gsap.to(textDiv, {autoAlpha: 0, duration: 0.4}),
+//     }
+//   })
+//   .to(imageDiv, {
+//     scale: 2,
+//     marginLeft: "auto",
+//     marginRight: "auto",
+//     overflow:"hedden",
+//     width: "100%",
+//     ease: "power2.out"
+//   });
+// }
 
-imageZoomAndCenterWithTextHide();
+// imageZoomAndCenterWithTextHide();
+
+
 
 
 // Web Design Section Animetion End
