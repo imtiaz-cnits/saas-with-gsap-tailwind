@@ -1,5 +1,7 @@
 
 
+
+
 /////////////////////// navbar sidebar start ///////////////////////////
 const menuBtn = document.querySelector(".nav_mobile-button");
 const mobileMenu = document.querySelector(".nav_mobile_menu");
@@ -218,36 +220,36 @@ paths.forEach((path, i) => {
 
 ///////////////////////////////////////////// Better Trade Section Start ///////////////////////////////////////
 
-    function startJirJirCloudAnimation() {
-    // Glow effect (optional but looks nice)
-    gsap.to(".section_card_svg", {
-      filter: "drop-shadow(0 0 10px #00C39A)",
-      duration: 1.5,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut"
-    });
+function startJirJirCloudAnimation() {
+  // Glow effect (optional but looks nice)
+  gsap.to(".section_card_svg", {
+    filter: "drop-shadow(0 0 10px #00C39A)",
+    duration: 1.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut"
+  });
 
-    // Jir Jir Kapa animation (vibration)
-    gsap.to(".section_card_svg", {
-      x: "+=1",
-      y: "-=1",
-      duration: 0.05,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut"
-    });
-  }
+  // Jir Jir Kapa animation (vibration)
+  gsap.to(".section_card_svg", {
+    x: "+=1",
+    y: "-=1",
+    duration: 0.05,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
+}
 
-  // Start on page load
-  window.addEventListener("DOMContentLoaded", startJirJirCloudAnimation);
+// Start on page load
+window.addEventListener("DOMContentLoaded", startJirJirCloudAnimation);
 
 //////////////////////////////////////////// Better Trade Section End /////////////////////////////////////////
 
 //////////////////////////////////////////// Better Trade Section 1 Start /////////////////////////////////////////
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const snakePath = document.querySelector('.section_card_svg_1 path');
   const originalFill = snakePath.getAttribute('fill');
   const pathLength = snakePath.getTotalLength();
@@ -292,20 +294,20 @@ document.addEventListener('DOMContentLoaded', function() {
       duration: 3.5,
       ease: 'power3.inOut',
     })
-    .to(snakePath, {
-      strokeWidth: 0,
-      fill: originalFill,
-      duration: 0.7,
-      ease: 'power2.out',
-    })
-    .to(snakePath, {
-      x: () => (Math.random() * 2) - 1,
-      y: () => (Math.random() * 2) - 1,
-      duration: 2,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: 1,
-    });
+      .to(snakePath, {
+        strokeWidth: 0,
+        fill: originalFill,
+        duration: 0.7,
+        ease: 'power2.out',
+      })
+      .to(snakePath, {
+        x: () => (Math.random() * 2) - 1,
+        y: () => (Math.random() * 2) - 1,
+        duration: 2,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: 1,
+      });
   }
 
   function playSecondAnimation() {
@@ -326,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //////////////////////////////////////////// Better Trade Section 1 End /////////////////////////////////////////
 
 //////////////////////////////////////////// Better Trade Section Counting Start /////////////////////////////////////////
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const count1 = { val: 0 };
   const count2 = { val: 0 };
 
@@ -361,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function animateMultiplePaths(svgSelector) {
   const paths = document.querySelectorAll(`${svgSelector} path`);
-  
+
   paths.forEach((path, index) => {
     const length = path.getTotalLength();
     path.style.strokeDasharray = length;
@@ -390,40 +392,33 @@ animateMultiplePaths('.section_start_project_svg_1');
 
 
 ////////////////////////////////// section second part Start /////////////////////////////////////////
- async function animateWaveSequentially(svgSelector) {
-  const paths = document.querySelectorAll(`${svgSelector} .wave_path`);
-  if (paths.length === 0) {
-    console.error("No wave_path elements found inside", svgSelector);
-    return;
-  }
 
-  while(true) {
-    for (const path of paths) {
-      await gsap.to(path, {
-        x: 10,
-        scaleX: 1.05,
-        opacity: 0.9,
-        duration: 1.3,
-        ease: "power1.out",
-      }).then(() => 
-        gsap.to(path, {
-          x: 0,
-          scaleX: 1,
-          opacity: 1,
-          duration: 1.3,
-          ease: "power1.in",
-        })
-      );
-    }
-  }
+
+// svg animetion one Start
+
+function animateWavePaths() {
+  gsap.utils.toArray(".wave_path").forEach((path, i) => {
+    gsap.to(path, {
+      scale: 1.1,
+      y: -5,
+      transformOrigin: "center center",
+      yoyo: true,
+      repeat: -1,
+      ease: "sine.inOut",
+      duration: 2,
+      delay: i * 0.4,
+    });
+  });
 }
 
-// Call function
-animateWaveSequentially('.section_second_part_svg svg');
+animateWavePaths();
+
+// svg animetion one end
 
 
+// image animetion one Start
 
-  function animateImageSway(selector) {
+function animateImageSway(selector) {
   const img = document.querySelector(selector);
   if (!img) {
     console.error(`Image not found: ${selector}`);
@@ -443,6 +438,65 @@ animateWaveSequentially('.section_second_part_svg svg');
 
 // Call korar example:
 animateImageSway('.section_second_part_img_wrapper img');
+
+// image animetion one End
+
+
+// svg animetion tow Start
+
+
+function createSVGAnimation() {
+  const svgPath = document.querySelector('.section_second_part_svg_1 svg path');
+  if (!svgPath) return;
+
+  const pathLength = svgPath.getTotalLength();
+
+  svgPath.style.stroke = 'white';
+  svgPath.style.strokeWidth = '2.5px';
+  svgPath.style.strokeDasharray = pathLength;
+  svgPath.style.strokeDashoffset = pathLength;
+  svgPath.style.fill = 'transparent';
+  svgPath.style.transformOrigin = 'center';
+  svgPath.style.filter = 'blur(0px)';
+
+  const tl = gsap.timeline({ repeat: -1, defaults: { ease: "power2.out" } });
+
+  // ripple + stroke draw
+  tl.fromTo(svgPath, {
+    scale: 0.7,
+    opacity: 0,
+    strokeDashoffset: pathLength
+  }, {
+    scale: 1,
+    opacity: 1,
+    strokeDashoffset: 0,
+    duration: 1.5
+  });
+
+  // gradient fill
+  tl.to(svgPath, {
+    fill: 'url(#sweepGradient)',
+    duration: 1.2
+  });
+
+  // solid dark fill with low opacity
+  tl.to(svgPath, {
+    fill: '#1B1F24',
+    opacity: 0.1,
+    duration: 0.6
+  });
+
+  // blur + fade out
+  tl.to(svgPath, {
+    opacity: 0,
+    filter: 'blur(8px)',
+    duration: 1.5
+  });
+}
+
+createSVGAnimation();
+
+// svg animetion tow end
 
 ///////////////////////////////// section second part End ///////////////////////////////////////////
 
@@ -506,45 +560,101 @@ marqueeAnimation();
 
 // App Design Section Animetion Start
 
+gsap.registerPlugin(ScrollTrigger);
+
+// Left text section
+gsap.fromTo(".app_design_text_section",
+  {
+    x: -150,
+    rotate: -8,
+    opacity: 0,
+  },
+  {
+    x: 0,
+    rotate: 0,
+    opacity: 1,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".app_design_items",
+      start: "top 80%",
+      end: "top 0%",
+      scrub: 0.4,
+      toggleActions: "play none none reverse",
+    }
+  }
+);
+
+// Right image section
+gsap.fromTo(".app_design_image_section",
+  {
+    x: 150,
+    rotate: 8,
+    opacity: 0,
+  },
+  {
+    x: 0,
+    rotate: 0,
+    opacity: 1,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".app_design_items",
+      start: "top 80%",
+      end: "top 0%",
+      scrub: 0.4,
+      toggleActions: "play none none reverse",
+    }
+  }
+);
+
+
 // App Design Section Animetion End
 
 
 // Web Design Section Animetion Start
+gsap.registerPlugin(ScrollTrigger);
 
-// gsap.registerPlugin(ScrollTrigger);
+// Left text section
+gsap.fromTo(".web_design_image_section",
+  {
+    x: -150,
+    rotate: -8,
+    opacity: 0,
+  },
+  {
+    x: 0,
+    rotate: 0,
+    opacity: 1,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".web_design_items",
+      start: "top 50%",
+      end: "top 0%",
+      scrub: 0.6,
+      toggleActions: "play none none reverse",
+    }
+  }
+);
 
-// function imageZoomAndCenterWithTextHide() {
-//   const imageDiv = document.querySelector(".web_design_image_section");
-//   const textDiv = document.querySelector(".web_design_text_section");
-
-//   if (!imageDiv || !textDiv) return;
-
-//   gsap.timeline({
-//     scrollTrigger: {
-//       trigger: imageDiv,
-//       start: "top center",
-//       end: "bottom center",
-//       scrub: true,
-//       markers: false,
-//       onEnter: () => gsap.to(textDiv, {autoAlpha: 0, duration: 0.4}),
-//       onLeaveBack: () => gsap.to(textDiv, {autoAlpha: 1, duration: 0.4}),
-//       onLeave: () => gsap.to(textDiv, {autoAlpha: 1, duration: 0.4}),
-//       onEnterBack: () => gsap.to(textDiv, {autoAlpha: 0, duration: 0.4}),
-//     }
-//   })
-//   .to(imageDiv, {
-//     scale: 2,
-//     marginLeft: "auto",
-//     marginRight: "auto",
-//     overflow:"hedden",
-//     width: "100%",
-//     ease: "power2.out"
-//   });
-// }
-
-// imageZoomAndCenterWithTextHide();
-
-
-
+// Right image section
+gsap.fromTo(".web_design_text_section",
+  {
+    x: 150,
+    rotate: 8,
+    opacity: 0,
+  },
+  {
+    x: 0,
+    rotate: 0,
+    opacity: 1,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: ".web_design_items",
+      start: "top 50%",
+      end: "top 0%",
+      scrub: 0.6,
+      toggleActions: "play none none reverse",
+    }
+  }
+);
 
 // Web Design Section Animetion End

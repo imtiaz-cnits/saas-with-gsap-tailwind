@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./assets/font/satoshi.css">
 </head>
 
-<body>
+<body class="bg-[color:var(--bg-color)]">
 
     <!-- Navbar Section Start -->
     <section id="relative section_nav">
@@ -52,7 +52,7 @@
 
                     <div class="hidden md:flex nav_cta_btn">
                         <a href="#"
-                            class="relative py-2 px-5 min-w-[120px] inline-block font-medium text-white rounded-3xl font-primary transition duration-300 ease-in-out hover:brightness-110 animate_border"
+                            class="relative py-2 px-5 min-w-[120px] inline-block font-medium text-[var(--color)] rounded-3xl font-primary transition duration-300 ease-in-out hover:brightness-110 animate_border"
                             style="
       border: 2px solid transparent;
       background: 
@@ -66,7 +66,7 @@ conic-gradient(
           rgba(100,116,139,0.5) 100%
         ) border-box; background-origin: border-box; background-clip: padding-box, border-box;
     ">
-                            Get for free
+                            Let,s do it
                         </a>
                     </div>
 
@@ -401,6 +401,7 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                             <path class="wave_path" fill-rule="evenodd" clip-rule="evenodd"
                                 d="M36.8499 58.5883C36.8317 58.4696 36.8135 58.351 36.7948 58.2329H25.4729C25.4712 58.351 25.47 58.4696 25.4683 58.5883H36.8499ZM10.0005 53.7073C10.052 52.5592 10.0884 51.7514 10.1247 50.9435C11.3773 52.8415 12.6047 51.1341 13.7219 51.0633H11.9169C11.4915 50.2409 13.9141 50.5934 12.109 49.3892C14.3898 49.0022 16.4561 48.2738 18.1089 50.0035C18.826 50.7547 20.3117 51.1931 20.2273 53.0274C20.2912 53.0754 20.8771 53.3127 21.1489 53.7459C23.3359 57.238 26.7474 57.5209 30.354 57.3531C32.3173 57.2614 34.301 56.9749 36.2373 57.1655C37.709 57.3105 39.1707 57.9576 40.5428 58.586C41.8604 59.1898 41.97 60.6284 42.0004 61.8402C42.0092 62.1991 40.8861 62.9397 40.3243 62.9005C36.6632 62.6474 33.0139 62.2277 29.3323 61.9816C30.1455 61.9273 30.9575 61.8735 31.7706 61.8191C31.78 61.7326 31.7882 61.6455 31.7976 61.5596C31.4279 61.5029 31.0389 61.5017 30.6938 61.3784C30.0763 61.1586 29.4618 60.9101 28.8917 60.5916C28.2637 60.2408 27.6878 59.7971 26.9519 59.696C27.2255 60.249 27.4985 60.8026 27.6467 61.1019C26.9021 61.3129 26.4902 61.4912 26.0667 61.5309C25.6454 61.5701 25.0853 61.6268 24.8041 61.4029C23.5551 60.4092 22.0535 59.8556 21.2116 58.1832C20.1611 56.0946 18.4821 54.3175 17.0402 52.4318C16.8399 52.1693 16.4345 51.8817 16.1404 51.8987C14.5204 51.9916 12.8958 52.1185 11.2947 52.3698C10.9256 52.4277 10.6408 53.021 10.0005 53.7073Z"
                                 fill="white" />
+
                         </svg>
                     </div>
                     <div class="section_second_part_svg_1 absolute rounded-full bottom-[6%] md:bottom-[20%] left-[8%]">
@@ -702,13 +703,14 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
         <div class="section_container">
             <div class="app_web_design_wepper px-[10px] md:px-[0px] py-[60px] md:py-[120px]">
                 <!-- App Design -->
-                <div class="app_design_items flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-[4%]">
-
+                <div
+                    class="app_design_items overflow-hidden flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-[4%]">
                     <div class="app_design_text_section fade_in_scroll w-full md:w-[60%] md:px-0">
-
                         <div class="app_design_title_small flex items-center gap-1 mb-3 fade_in_scroll">
-                            <div class="app_design_line h-[1px] w-[18px] md:w-[20px] bg-[color:var(--color-1)]"></div>
-                            <p class="text-[var(--color-1)] text-[20px] md:text-[22px] font-normal m-0">App Design</p>
+                            <div class="app_design_line h-[1px] w-[18px] md:w-[20px] bg-[color:var(--color-1)]">
+                            </div>
+                            <p class="text-[var(--color-1)] text-[20px] md:text-[22px] font-normal m-0">App Design
+                            </p>
                         </div>
 
                         <h2
@@ -722,13 +724,25 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                             that will help your work to be better
                         </p>
 
-                        <div class="explore_more_btn pt-[6px] md:pt-[10px]">
+                        <div class="pt-[6px] md:pt-[10px] explore_more_btn">
                             <a href="#"
-                                class="py-2 px-4 md:py-2 md:px-5 min-w-[120px] inline-block font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out text-center">
+                                class="py-2 px-4 md:py-2 md:px-5 min-w-[120px] inline-block font-medium text-[var(--color)] rounded-xl font-primary transition duration-300 animate_border"
+                                style="
+      border: 2px solid transparent;
+      background: 
+        linear-gradient(45deg, #0f172a, #1e293b) padding-box,
+conic-gradient(
+          from var(--border-angle),
+          rgba(100,116,139,0.5) 75%,
+          #00C39A 85%,
+          #00C39A 90%,
+          #00C39A 95%,
+          rgba(100,116,139,0.5) 100%
+        ) border-box; background-origin: border-box; background-clip: padding-box, border-box;
+    ">
                                 Explore More
                             </a>
                         </div>
-
                     </div>
 
                     <div
@@ -740,7 +754,7 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                 </div>
                 <!-- Web Design -->
                 <div
-                    class="web_design_items flex flex-col-reverse md:flex-row items-center md:items-center gap-4 md:gap-[4%] w-full pt-[60px] md:pt-[120px]">
+                    class="web_design_items overflow-hidden flex flex-col-reverse md:flex-row items-center md:items-center gap-4 md:gap-[4%] w-full pt-[60px] md:pt-[120px]">
 
                     <div class="web_image w-[100%] md:w-[60%]">
                         <div
@@ -772,9 +786,22 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
                                 that will help your work to be better
                             </p>
 
-                            <div class="explore_more_btn pt-[6px] md:pt-[10px]">
+                            <div class="pt-[6px] md:pt-[10px] explore_more_btn">
                                 <a href="#"
-                                    class="py-2 px-4 md:py-2 md:px-5 min-w-[120px] inline-block font-medium text-[var(--color)] border border-[var(--color)] rounded-xl font-primary transition duration-300 ease-in-out text-center">
+                                    class="py-2 px-4 md:py-2 md:px-5 min-w-[120px] inline-block font-medium text-[var(--color)] rounded-xl font-primary transition duration-300 animate_border"
+                                    style="
+      border: 2px solid transparent;
+      background: 
+        linear-gradient(45deg, #0f172a, #1e293b) padding-box,
+conic-gradient(
+          from var(--border-angle),
+          rgba(100,116,139,0.5) 75%,
+          #00C39A 85%,
+          #00C39A 90%,
+          #00C39A 95%,
+          rgba(100,116,139,0.5) 100%
+        ) border-box; background-origin: border-box; background-clip: padding-box, border-box;
+    ">
                                     Explore More
                                 </a>
                             </div>
@@ -787,6 +814,20 @@ font-[700] tracking-tight text-[var(--primary-color)] pb-[10px]
         </div>
     </section>
     <!-- App and Web Design Section End -->
+
+    <!-- Transformed Management Section Sart -->
+    <section class="management_section bg-[color:var(--bg-color)] px-[10px] md:px-[0px] py-[10px] md:py-[80px]">
+        <div class="management_section_wapper">
+            <div class="transformed_management_heading">
+
+            </div>
+            <div
+                class="bg-[url('/assets/icon/transformed_management.svg')] bg-no-repeat bg-center bg-cover h-96 w-[65%] mx-auto">
+            </div>
+
+        </div>
+    </section>
+    <!-- Transformed Management Section End -->
 
 
     <!-- js link start -->
