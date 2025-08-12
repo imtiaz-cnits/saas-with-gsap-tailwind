@@ -658,3 +658,43 @@ gsap.fromTo(".web_design_text_section",
 );
 
 // Web Design Section Animetion End
+
+
+// Ecommerce section Bird Animetion Start
+
+window.onload = () => {
+  const barPaths = document.querySelectorAll('.bar_path');
+  const arrowPath = document.querySelector('.arrow_path');
+  const arrowDuration = 3;
+  const totalBars = barPaths.length;
+
+  // arrow_path stroke animation setup
+  const pathLength = arrowPath.getTotalLength();
+  arrowPath.style.strokeDasharray = pathLength;
+  arrowPath.style.strokeDashoffset = pathLength;
+
+  const tl = gsap.timeline();
+
+  // arrow_path stroke animation
+  tl.to(arrowPath, {
+    strokeDashoffset: 0,
+    duration: arrowDuration,
+    ease: "power2.out"
+  }, 0);
+
+  // total bar animation duration কমিয়ে 1.5 সেকেন্ড
+  const totalBarAnimationDuration = 1.5;
+  const singleDelay = totalBarAnimationDuration / totalBars;
+
+  barPaths.forEach((path, i) => {
+    tl.fromTo(path,
+      { scaleY: 0, transformOrigin: "bottom center" },
+      { scaleY: 1, duration: 0.15, ease: "power2.out" },
+      i * singleDelay
+    );
+  });
+};
+
+
+
+// Ecommerce section Bird Animetion End 

@@ -53,12 +53,15 @@
     --bg-color-3: #201E1A;
     --bg-color-4: #FDC799;
     --bg-color-5: #395051;
+    --bg-color-6: #4A9FFF;
     --card-border: #262A2F;
     --card-shadow: drop-shadow(110px 94px 140px rgba(0, 0, 0, 0.21));
+    --link:#F4C851;
     --text: #FFF;
     --color: #00C39A;
     --color-1: #EEBE41;
     --color-2: #EEEEEE;
+    --color-3:rgba(255, 255, 255, 0.70);
     --black: #000000;
     --hero-bg: radial-gradient(50.06% 50.06% at 50% 50.06%, #183EC2 0%, #EAEEFE 100%);
   }
