@@ -660,41 +660,97 @@ gsap.fromTo(".web_design_text_section",
 // Web Design Section Animetion End
 
 
-// Ecommerce section Bird Animetion Start
+// Ecommerce section Card icon Animetion Start
 
-window.onload = () => {
-  const barPaths = document.querySelectorAll('.bar_path');
-  const arrowPath = document.querySelector('.arrow_path');
-  const arrowDuration = 3;
-  const totalBars = barPaths.length;
+  function animateBarsAndArrow() {
+    const barPaths = document.querySelectorAll('.bar_path');
+    const arrowPath = document.querySelector('.arrow_path');
 
-  // arrow_path stroke animation setup
-  const pathLength = arrowPath.getTotalLength();
-  arrowPath.style.strokeDasharray = pathLength;
-  arrowPath.style.strokeDashoffset = pathLength;
+    if (!arrowPath || barPaths.length === 0) return;
 
-  const tl = gsap.timeline();
+    const totalBars = barPaths.length;
+    const pathLength = arrowPath.getTotalLength();
 
-  // arrow_path stroke animation
-  tl.to(arrowPath, {
-    strokeDashoffset: 0,
-    duration: arrowDuration,
-    ease: "power2.out"
-  }, 0);
+    gsap.set(arrowPath, {
+      strokeDasharray: pathLength,
+      strokeDashoffset: pathLength
+    });
 
-  // total bar animation duration কমিয়ে 1.5 সেকেন্ড
-  const totalBarAnimationDuration = 1.5;
-  const singleDelay = totalBarAnimationDuration / totalBars;
+    gsap.set(barPaths, { scaleY: 0, opacity: 0, transformOrigin: "bottom center" });
 
-  barPaths.forEach((path, i) => {
-    tl.fromTo(path,
-      { scaleY: 0, transformOrigin: "bottom center" },
-      { scaleY: 1, duration: 0.15, ease: "power2.out" },
-      i * singleDelay
-    );
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+
+    const barDuration = 0.8;
+    const singleDelay = 0.3;
+
+    const totalBarAnimationDuration = (barDuration + singleDelay * (totalBars - 1));
+
+    tl.to(arrowPath, {
+      strokeDashoffset: 0,
+      duration: totalBarAnimationDuration,
+      ease: "power1.out"
+    }, 0);
+
+    barPaths.forEach((path, i) => {
+      tl.to(path, {
+        scaleY: 1,
+        opacity: 1,
+        duration: barDuration,
+        ease: "power2.out"
+      }, i * singleDelay);
+    });
+
+    tl.to({}, { duration: 0.7 });
+
+    barPaths.forEach((path, i) => {
+      tl.to(barPaths[totalBars - 1 - i], {
+        scaleY: 0,
+        opacity: 0,
+        duration: barDuration,
+        ease: "power2.in"
+      }, ">" + (i * singleDelay));
+    });
+
+    tl.to(arrowPath, {
+      strokeDashoffset: pathLength,
+      duration: barDuration,
+      ease: "power1.in"
+    }, ">" + singleDelay * (totalBars - 1));
+
+    tl.to({}, { duration: 0.7 });
+  }
+
+  animateBarsAndArrow();
+
+
+// Ecommerce section Card icon Animetion End 
+
+
+
+// Ecommerce section Bird Animetion Start 
+function flutterWings() {
+  const wings = document.querySelectorAll('.bird_wing');
+  if (wings.length === 0) return;
+
+  wings.forEach((wing) => {
+    const tl = gsap.timeline({ repeat: -1, yoyo: true, defaults: { ease: "sine.inOut" } });
+
+    tl.to(wing, { rotation: 8, scaleX: 1.05, scaleY: 0.95, duration: 0.15, transformOrigin: "center center" })
+      .to(wing, { rotation: -6, scaleX: 0.95, scaleY: 1.05, duration: 0.15 })
+      .to(wing, { rotation: 5, scaleX: 1.04, scaleY: 0.96, duration: 0.15 })
+      .to(wing, { rotation: -4, scaleX: 0.97, scaleY: 1.03, duration: 0.15 })
+      .to(wing, { rotation: 3, scaleX: 1.03, scaleY: 0.97, duration: 0.15 })
+      .to(wing, { rotation: 0, scaleX: 1, scaleY: 1, duration: 0.15 });
   });
-};
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+  flutterWings();
+});
 
 
 // Ecommerce section Bird Animetion End 
+
+
+
+
